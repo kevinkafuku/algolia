@@ -1,5 +1,8 @@
 const states = {
-    input: "react",
+  input: {
+    currentInput: "",
+    topic: "react"
+  },
     results: {
       "react": [],
       "redux": [],

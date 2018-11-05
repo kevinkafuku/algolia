@@ -62,7 +62,7 @@ import SearchIcon from "@material-ui/icons/Search";
   };
 };
 
- const SearchAppBar = ({ classes }) => {
+ const SearchAppBar = ({ classes, currentInput, onInputChange, onTopicSet}) => {
   const { root, grow, search, searchIcon, inputRoot, inputInput } = classes;
   return (
     <div className={root}>
@@ -70,12 +70,16 @@ import SearchIcon from "@material-ui/icons/Search";
         <Toolbar>
           <Typography variant="title" color="inherit" className={grow}>Hacker-News Search</Typography>
           <div className={search}>
-            <div className={searchIcon}><SearchIcon /></div>
-            <Input
-              placeholder="Search"
-              disableUnderline
-              classes={{ root: inputRoot, input: inputInput }}
-            />
+          <div className={searchIcon}><SearchIcon /></div>
+          <form onSubmit={onTopicSet}>
+              <Input
+                placeholder="Search"
+                disableUnderline
+                classes={{ root: inputRoot, input: inputInput }}
+                onChange={onInputChange}
+                value={currentInput}
+              />
+            </form>
           </div>
         </Toolbar>
       </AppBar>
@@ -84,7 +88,10 @@ import SearchIcon from "@material-ui/icons/Search";
 };
 
  SearchAppBar.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  currentInput: PropTypes.string.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onTopicSet: PropTypes.func.isRequired
 };
 
  export default withStyles(styles)(SearchAppBar); 

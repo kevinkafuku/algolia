@@ -3,15 +3,15 @@ import './App.css';
 import Layout from "./components/Layout";
 import ListDrawer from "./components/ListDrawer";
 import NewsContent from "./components/News";
-import SearchAppBar from "./components/SearchAppBar";
+import TopBarWithSearch from "./containers/TopBarWithSearch";
 
  class App extends Component {
   render() {
     return (
   <Fragment>
   <Layout
-    top={<SearchAppBar />}
-    eft={<ListDrawer />}
+    top={<TopBarWithSearch />}
+    left={<ListDrawer />}
     center={<NewsContent />}
   />
   </Fragment>
