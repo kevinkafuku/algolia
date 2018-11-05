@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+
  const styles = ({ spacing, palette }) => ({
   root: { flexGrow: 1 },
   paper: {
@@ -11,6 +12,7 @@ import Grid from "@material-ui/core/Grid";
     color: palette.text.secondary
   }
 });
+
  const CenteredGrid = ({ classes }) => {
   const { root, paper } = classes;
    return (
@@ -26,6 +28,7 @@ import Grid from "@material-ui/core/Grid";
     </div>
   );
 }
+
  CenteredGrid.propTypes = {
   classes: PropTypes.object.isRequired
 };
