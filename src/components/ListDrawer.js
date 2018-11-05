@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
 
- const drawerWidth = 240;
+ const drawerWidth = 400;
  const styles = ({ mixins }) => ({
   drawerPaper: {
     position: 'relative',
@@ -18,10 +19,9 @@ import List from "@material-ui/core/List";
    return (
     <Drawer variant="permanent" classes={{ paper: drawerPaper }}>
       <div className={toolbar} />
-      <List>1. </List>
-      <List>2. </List>
-      <List>3. </List>
-      <List>4. </List>
+      <List>
+      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(index => <ListItem key={index} button>{`Hacker News ${index}`}</ListItem>)}
+      </List>
     </Drawer>
   );
 }
