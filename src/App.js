@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
-import CenteredGrid from './components/CenteredGrid';
+import SearchAppBar from "./components/SearchAppBar";
+import CenteredGrid from "./components/CenteredGrid";
 
-class App extends Component {
+ class App extends Component {
   render() {
     return (
-      <CenteredGrid/>
+<Fragment>
+        <SearchAppBar />
+        <CenteredGrid />
+      </Fragment>
     );
   }
 }
